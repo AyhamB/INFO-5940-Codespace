@@ -38,7 +38,3 @@ Codespaces is not free, but their per-month [free quota](https://docs.github.com
 * You can control when it's running, and the space it takes up.  Check out [GitHub's codespaces lifecycle documentation](https://docs.github.com/en/codespaces/about-codespaces/understanding-the-codespace-lifecycle)
 
 
-## Lecture1 Class Activity API Key 
-* One-time use OpenAI API key: OPENAI_API_KEY=sk-4SsZRUtTdKZITdRrpGTmlw
-OPENAI_BASE_URL=https://api.ai.it.cornell.edu/
-
