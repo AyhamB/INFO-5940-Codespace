@@ -36,9 +36,3 @@ Codespaces is not free, but their per-month [free quota](https://docs.github.com
 * Codespaces keep running even when you close your browser (but will time out and stop after a while)
 * Unless you're on a free plan, or within your free quota, costs acrue while the codespace is running, whether or not you have it open in your browser or are working on it
 * You can control when it's running, and the space it takes up.  Check out [GitHub's codespaces lifecycle documentation](https://docs.github.com/en/codespaces/about-codespaces/understanding-the-codespace-lifecycle)
-
-
-## Lecture1 Class Activity API Key 
-* One-time use OpenAI API key: OPENAI_API_KEY=sk-4SsZRUtTdKZITdRrpGTmlw
-OPENAI_BASE_URL=https://api.ai.it.cornell.edu/
-
