@@ -36,3 +36,13 @@ Codespaces is not free, but their per-month [free quota](https://docs.github.com
 * Codespaces keep running even when you close your browser (but will time out and stop after a while)
 * Unless you're on a free plan, or within your free quota, costs acrue while the codespace is running, whether or not you have it open in your browser or are working on it
 * You can control when it's running, and the space it takes up.  Check out [GitHub's codespaces lifecycle documentation](https://docs.github.com/en/codespaces/about-codespaces/understanding-the-codespace-lifecycle)
+
+## Sync Updates 
+To make sure your personal forked repository stays up to date with the original class repository, please follow these steps:
+1. Open your forked repo.
+2. At the top of the page, you should see a banner or menu option that shows whether your fork is behind the original repo.
+3. Click the **Sync fork** button.
+4. In the dropdown, choose **Update branch** to pull the latest changes from the original repo into your fork.
+
+## Troubleshooting
+- The Jupyter extension should install automatically. If you still cannot select a Python kernel on Jupyter Notebook: Go to the left sidebar >> **Extensions** >> search for **Jupyter** >> reload window (or reinstall it).   
