@@ -12,7 +12,7 @@
 	// "forwardPorts": [],
 
 	"remoteEnv": {
-		"OPENAI_API_KEY": "YOUR_OPENAI_API_KEY",
+		"OPENAI_API_KEY": "sk-OYiuWSY5uKs89CtSPQZTCQ",
 		"OPENAI_BASE_URL": "https://api.ai.it.cornell.edu/",
 		"TZ": "America/New_York"
 	},
