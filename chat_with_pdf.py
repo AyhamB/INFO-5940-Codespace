@@ -15,7 +15,7 @@ from langchain_openai import ChatOpenAI
 
 # App Setup
 st.set_page_config(page_title="💬 LangChain RAG Chat", layout="wide")
-st.title("💬 RAG System with LangChain + Chroma")
+st.title("💬 Chat about your own document")
 
 #  Initialize OpenAI 
 API_KEY = os.environ.get("API_KEY")
