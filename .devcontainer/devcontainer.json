@@ -12,7 +12,9 @@
 	// "forwardPorts": [],
 
 	"remoteEnv": {
-		"OPENAI_API_KEY": "YOUR_OPENAI_API_KEY",
+		"API_KEY": "",
+		"OPENAI_API_KEY": "",
+		"BASE_URL": "https://api.ai.it.cornell.edu/",
 		"OPENAI_BASE_URL": "https://api.ai.it.cornell.edu/",
 		"TZ": "America/New_York"
 	},
@@ -24,7 +26,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-toolsai.jupyter"
+				"ms-toolsai.jupyter@2025.7.0"
 			]
 		}
 	}
