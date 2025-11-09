@@ -19,11 +19,11 @@ Forking creates a personal copy of the repo under **your** GitHub account.
 
 ### Step 3: Verify your environment 
 Once the Codespace is ready: 
-1. Open `test.ipynb` in your codespace.
+1. If you are in `<your-file-name>.ipynb` in your codespace.
 2. Install the Python 3.11.13 Kernel.  In the top-right corner, click **Select Kernel**.
     1. If **Install/Enable suggested extensions Python + Jupyter** appears, select it, and wait for the install to finish before moving on to the next step.
     2. Select **Python Environments** choose **Python 3.11.13 (first option)**.
-3. Run the first code block to check your setup. You should see `openai` import successfully.
+3. Run the code block to check your setup. 
 
 ## About GitHub Codespaces
 
@@ -59,29 +59,34 @@ Optionally, you can also follow these steps to create a new branch on your fork:
    - Make sure the Codespace is created from the **current branch**.
   
 ## Running a Streamlit App on Codespaces  
-
 Follow these steps to launch and view your Streamlit app in GitHub Codespaces:
-
-1. **Open the terminal** inside your Codespace.  
-
+1. **Open the terminal** inside your Codespace.
 2. Run the command:  
    ```bash
    streamlit run your-file-name.py
    ```  
-   *(Replace `your-file-name.py` with the actual name of your Streamlit app file, e.g., `hello_app.py`.)*  
-
+   **(Replace `your-file-name.py` with the actual name of your Streamlit app file, e.g., `hello_app.py`.)**
 3. After pressing **Enter**, a popup should appear in the bottom-right corner of Codespace editor.  
    - Click **“Open in Browser”** to view your app.  
 
    ⚠️ *If you miss the popup:*  
    - Press **Ctrl + C** in the terminal to stop the app.  
-   - Rerun the command from step 2 — the popup should appear again.  
-
-4. A new browser tab will open, showing the interface of your Streamlit app.  
-
+   - Rerun the command from step 2 — the popup should appear again.
+4. A new browser tab will open, showing the interface of your Streamlit app.
 5. **Make changes to your code** in the Codespace editor.  
    - Refresh the browser tab to see the updated version of your app.  
 
+## Setting Your API Key in GH Codespaces
+You will receive an individual API Key for class assignments. To prevent accidental exposure online, please follow the steps below to securely insert your key in the terminal.
+1. **Open the terminal** inside your Codespace.
+2. Run the command to temporarily set your API Key for this session:  
+   ```bash
+   export API_KEY="your_actual_API_KEY"
+   ```
+3. If you want to run the Streamlit app and set up the key at the same time, run both commands together:
+   ```bash
+   API_KEY="your_actual_API_KEY" streamlit run your-file-name.py
+   ```
 
 ## Troubleshooting
 - The Jupyter extension should install automatically. If you still cannot select a Python kernel on Jupyter Notebook: Go to the left sidebar >> **Extensions** >> search for **Jupyter** >> reload window (or reinstall it).   
