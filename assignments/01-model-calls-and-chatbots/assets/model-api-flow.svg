@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="350" viewBox="0 0 1180 350" role="img" aria-labelledby="title description">
+  <title id="title">How a question reaches the model</title>
+  <desc id="description">Your Python code sends a model name and messages to Cornell's AI API Gateway. The gateway passes the request to the platform running that model and returns the response to your code. Azure OpenAI on Microsoft Azure and Amazon Bedrock on AWS are hosting examples, not a verified description of Cornell's configuration.</desc>
+  <rect width="1180" height="350" rx="16" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif">
+    <text x="24" y="39" font-size="25" font-weight="700" fill="#202B33">How a question reaches the model</text>
+
+    <rect x="24" y="74" width="300" height="190" rx="12" fill="#F1F6F8" stroke="#C7D9DF"/>
+    <text x="48" y="115" font-size="23" font-weight="700" fill="#202B33">Your Python code</text>
+    <text x="48" y="158" font-size="17" fill="#40535E">Chooses a model.</text>
+    <text x="48" y="188" font-size="17" fill="#40535E">Sends the conversation.</text>
+    <text x="48" y="218" font-size="17" fill="#40535E">Displays the answer.</text>
+
+    <rect x="440" y="74" width="300" height="190" rx="12" fill="#FFF3F2" stroke="#E4B9B6"/>
+    <text x="464" y="115" font-size="23" font-weight="700" fill="#B31B1B">Cornell AI API Gateway</text>
+    <text x="464" y="158" font-size="17" fill="#40535E">Passes the request to</text>
+    <text x="464" y="184" font-size="17" fill="#40535E">the platform running the model.</text>
+    <text x="464" y="224" font-size="17" fill="#40535E">Sends the response back.</text>
+
+    <rect x="856" y="74" width="300" height="190" rx="12" fill="#F1F6F8" stroke="#C7D9DF"/>
+    <text x="880" y="105" font-size="15" fill="#456571">Where the model runs (examples)</text>
+    <text x="880" y="141" font-size="21" font-weight="700" fill="#202B33">Microsoft Azure</text>
+    <text x="880" y="167" font-size="17" fill="#40535E">GPT-4o through Azure OpenAI</text>
+    <text x="880" y="207" font-size="21" font-weight="700" fill="#202B33">Amazon Bedrock (AWS)</text>
+    <text x="880" y="233" font-size="17" fill="#40535E">Claude models</text>
+
+    <g font-size="14" font-weight="700">
+      <text x="356" y="145" fill="#B31B1B">Request</text>
+      <path d="M334,158 H425" fill="none" stroke="#B31B1B" stroke-width="2.5"/>
+      <polygon points="430,158 420,152 420,164" fill="#B31B1B"/>
+      <text x="350" y="210" fill="#17677A">Response</text>
+      <path d="M430,223 H339" fill="none" stroke="#17677A" stroke-width="2.5"/>
+      <polygon points="334,223 344,217 344,229" fill="#17677A"/>
+      <text x="772" y="145" fill="#B31B1B">Request</text>
+      <path d="M750,158 H841" fill="none" stroke="#B31B1B" stroke-width="2.5"/>
+      <polygon points="846,158 836,152 836,164" fill="#B31B1B"/>
+      <text x="766" y="210" fill="#17677A">Response</text>
+      <path d="M846,223 H755" fill="none" stroke="#17677A" stroke-width="2.5"/>
+      <polygon points="750,223 760,217 760,229" fill="#17677A"/>
+    </g>
+    <text x="24" y="307" font-size="17" font-weight="700" fill="#B31B1B">Request:</text>
+    <text x="102" y="307" font-size="17" fill="#40535E">model name + messages</text>
+    <text x="440" y="307" font-size="17" font-weight="700" fill="#17677A">Response:</text>
+    <text x="534" y="307" font-size="17" fill="#40535E">answer + details about the call</text>
+  </g>
+</svg>

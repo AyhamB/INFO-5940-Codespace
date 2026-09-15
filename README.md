@@ -33,7 +33,7 @@ environment automatically, and it never touches the filesystem.
 5. Click **Add secret**.
 
 > Set the secret **before** creating your Codespace. If you have already created
-> one, the secret only appears after you rebuild it:
+> one, that is fine too. The secret only appears after you rebuild the container, so please make sure to do so by following:
 > **Cmd/Ctrl + Shift + P** → **Codespaces: Rebuild Container**.
 
 You do not need to set `OPENAI_BASE_URL` — the Codespace points it at the
@@ -90,38 +90,95 @@ Codespaces is not free, but their per-month [free quota](https://docs.github.com
 * Unless you're on a free plan, or within your free quota, costs acrue while the codespace is running, whether or not you have it open in your browser or are working on it
 * You can control when it's running, and the space it takes up.  Check out [GitHub's codespaces lifecycle documentation](https://docs.github.com/en/codespaces/about-codespaces/understanding-the-codespace-lifecycle)
 
-## Sync Updates 
-To make sure your personal forked repository stays up to date with the original class repository, please follow these steps:
-1. Open your forked repo.
-2. At the top of the page, you should see a banner or menu option that shows whether your fork is behind the original repo.
-3. Click the **Sync fork** button.
-4. In the dropdown, choose **Update branch** to pull the latest changes from the original repo into your fork.
+## How the Course Materials Are Organized
 
-Optionally, you can also follow these steps to create a new branch on your fork:
-1. Open your **forked repository** on GitHub.  
-2. At the top of the page, next to the branch dropdown, click the **Branches** button.  
-3. In the **Branches** view, click the green **New Branch** button.  
-4. In the popup window, enter a branch name.  
-   - You can use any name you like, but it’s recommended to match the branch name used in class for better organization.  
-5. Under **Branch source**, select:  
-   - **Repository:** `AyhamB/INFO-5940-Codespace`  
-   - **Branch:** choose the branch you want to sync from (e.g., `streamlit`).  
-6. Click the green **Create New Branch** button.  
-7. Verify that you’re now back in **your fork**, on the new branch you just created.  
-8. Click the **Code** button and create a new Codespace (if you don’t already have one).  
-   - Make sure the Codespace is created from the **current branch**.
-  
-## Running a Streamlit App on Codespaces  
+Every assignment and in-class notebook lives in its own numbered folder under
+`assignments/`, for example `assignments/01-chatbot/`. Shared data files live in
+`data/`.
 
-Follow these steps to launch and view your Streamlit app in GitHub Codespaces:
+- Work **directly in the files inside the assignment folder**. That is where we
+  will look for your work.
+- Everything stays on the `main` branch. You never need to create or switch
+  branches in this course.
+- Once we publish an assignment folder we do not change the files in it. If a
+  fix is needed we add a new file or post instructions on Canvas.
 
-1. **Open the terminal** inside your Codespace.  
+## Getting Updates from the Class Repository
 
-2. Run the command:  
+When we release new material we push it to the class repository. **Your fork
+and your Codespace do not update on their own.** Each time we announce an
+update, follow these steps:
+
+1. **Save, commit, and push your work before syncing.** Save any files you have
+   edited, then commit and push your changes to your fork. See
+   [Saving and Submitting Your Work](#saving-and-submitting-your-work) below.
+   If you have no new work to save or push, continue to the next step.
+2. **Update your fork on GitHub.** Open your fork, click **Sync fork** near the
+   top of the file list, then **Update branch**.
+3. **Pull into your Codespace.** In the Codespace, open the **Source Control**
+   panel in the left sidebar, click the **...** menu, and choose **Pull**. Or run
+   this in the terminal:
    ```bash
-   streamlit run your-file-name.py
-   ```  
-   *(Replace `your-file-name.py` with the actual name of your Streamlit app file, e.g., `hello_app.py`.)*  
+   git pull
+   ```
+
+The new folder appears in your file explorer. That is all that is needed for
+notebooks, apps, and data files.
+
+**When the announcement says "rebuild":** we changed the installed packages or
+the container setup. Pull first, then run **Cmd/Ctrl + Shift + P** →
+**Codespaces: Rebuild Container**. Rebuilding is only needed when we say so.
+
+**If `git pull` refuses because of local changes:** you have uncommitted work.
+Commit and push it first (next section), then pull again.
+
+## Saving and Submitting Your Work
+
+**Your Codespace is not permanent storage.** GitHub deletes a Codespace after
+30 days of inactivity, and it can be deleted by accident. The only durable copy
+of your work is what you push to your fork. **Push at the end of every work
+session.**
+
+Your Codespace is already connected to your fork with your GitHub login, so
+there is nothing to configure. Either of these works:
+
+- **Source Control panel** (left sidebar): click **+** next to the changed files
+  to stage them, type a short message, click **Commit**, then click
+  **Sync Changes**.
+- **Terminal:**
+  ```bash
+  git add .
+  git commit -m "Finish assignment 1"
+  git push
+  ```
+
+Before your final commit for a notebook assignment, click **Run All** so the
+saved outputs show that your notebook ran.
+
+**Submitting:** follow the instructions posted on Canvas for each assignment.
+Usually this means pasting the link to your file in your fork on GitHub.
+Assignments are due at the time listed on Canvas, so push before the deadline.
+
+**Your API key is never part of this.** It lives in a Codespaces secret, not in
+a file, and `.gitignore` blocks `.env` files. Never paste the key into a
+notebook or script.
+
+### End-of-session checklist
+
+1. Commit and push your work.
+2. Stop your Codespace to save your free quota: go to
+   [github.com/codespaces](https://github.com/codespaces), click **...** next to
+   your Codespace, and choose **Stop codespace**.
+
+## Running a Streamlit App on Codespaces
+
+1. **Open the terminal** inside your Codespace.
+
+2. Run the app, giving the path to the file:
+   ```bash
+   streamlit run assignments/01-chatbot/app.py
+   ```
+   *(Replace the path with the actual file for the assignment.)*
 
 3. After pressing **Enter**, Codespaces forwards port **8501** and opens the app
    in a new browser tab.
@@ -129,9 +186,13 @@ Follow these steps to launch and view your Streamlit app in GitHub Codespaces:
    *If the tab does not open:* go to the **Ports** tab in the bottom panel, find
    **Streamlit App** on port 8501, and click the globe icon to open it.
 
-4. **Make changes to your code** in the Codespace editor.
-   - Refresh the browser tab to see the updated version of your app.  
+4. **Make changes to your code** in the Codespace editor, then click **Rerun**
+   in the app, or refresh the browser tab.
 
+5. **Run one app at a time.** Before starting a different app, go back to the
+   terminal and press **Ctrl + C** to stop the running one. If Streamlit says it
+   is using port **8502**, an app is still running on 8501 and the new tab will
+   not open automatically. Stop it and try again.
 
 ## Troubleshooting
 
@@ -153,6 +214,19 @@ bash ./.devcontainer/setup.sh
 **No Python kernel offered in the notebook**
 Left sidebar → **Extensions** → confirm **Python** and **Jupyter** are installed,
 then reload the window.
+
+**`git pull` says your local changes would be overwritten**
+You have uncommitted work in a file that was updated. Commit and push your work
+first, then pull again. If you are stuck, ask a TA before deleting anything.
+
+**Streamlit opened on port 8502 instead of 8501**
+Another Streamlit app is still running. Press **Ctrl + C** in the terminal
+running it, then start the new one.
+
+**My work disappeared after my Codespace was deleted**
+Anything you pushed is safe in your fork on GitHub. Create a new Codespace from
+your fork and it will be there. Anything you did not push is gone, which is why
+you should push at the end of every session.
 
 **Never commit your key.** `.gitignore` excludes `.env` files, but the safest
 approach is the Codespaces secret above, which never creates a file at all.

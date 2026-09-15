@@ -31,3 +31,6 @@ chroma_db/
 .mypy_cache/
 .DS_Store
 Thumbs.db
+
+# --- Personal / local-only folders ---
+private/
