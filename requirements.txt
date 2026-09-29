@@ -17,6 +17,14 @@ langchain-core~=0.2.43
 langchain-community~=0.2.19
 langchain-openai~=0.1.25
 
+# --- Assignment 2: Chroma integration for the existing LangChain 0.2 stack ---
+langchain-text-splitters==0.2.4
+langchain-chroma==0.1.4
+chromadb==0.5.23
+# Chroma 0.5 uses the older PostHog capture API and NumPy 1.x.
+posthog==3.25.0
+numpy==1.26.4
+
 # --- Data / IO ---
 pandas~=2.3
 pyarrow~=21.0
